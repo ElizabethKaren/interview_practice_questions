@@ -18,13 +18,12 @@ def isPalindrome(string):
 def is_rotation(string1, string2):
     d1 = create_diction(string1)
     d2 = create_diction(string2)
-    for letter1 in d1:
-        for letter2 in d2:
-            if letter1 == letter2:
-                pass 
-            else:
-                return True
-    return False
+    count = 0
+    while count < len(d1):
+        if d1[count] != d2[count]:
+            return False  
+        count += 1 
+    return True
 
     
 
