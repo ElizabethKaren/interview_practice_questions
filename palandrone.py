@@ -1,5 +1,5 @@
-string1 = 'elizabkienji'
-string2 = 'liz'
+string1 = 'waterbottle'
+string2 = 'erbottlewat'
 
 def isPalindrome(string):
     d = {}
@@ -15,6 +15,28 @@ def isPalindrome(string):
     
     return False
 
+def is_rotation(string1, string2):
+    d1 = create_diction(string1)
+    d2 = create_diction(string2)
+    for letter1 in d1:
+        for letter2 in d2:
+            if letter1 == letter2:
+                pass 
+            else:
+                return True
+    return False
+
+    
+
+def create_diction(string):
+    d = []
+    for letter in string:
+        d.append(letter)
+    
+    d.sort()
+    return d
+    
+
 def isSubstring(string1, string2):
     sub_string = ''
     for letter in string2:
@@ -26,4 +48,4 @@ def isSubstring(string1, string2):
 
 
 
-print(isSubstring(string1,string2))
+print(is_rotation(string1,string2))
