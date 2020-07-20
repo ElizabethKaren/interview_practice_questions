@@ -4,6 +4,7 @@
 input = 'Tact Coa' ##true
 input2 = 'eloxi'
 
+#o(n)
 def is_palindrome_permutation(input):
     dictionary = {}
     for i in range(len(input)):
