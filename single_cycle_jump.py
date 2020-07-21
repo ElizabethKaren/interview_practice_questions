@@ -1,11 +1,19 @@
 array = [2,3,1,-4,-4,2]
 
+## NOT SOLVED
+
 def array_jumps(array):
-    count = 0
-    for i in range(len(array)):
+    clone_array = []
+    for i in array:
+        if i == len(array) -1:
+            i = -1
         num = array[i]
-        newNum = i + num 
-        print(newNum)
+        print(num)
+        newIndex = i + num 
+        clone_array.append(newIndex)
 
 
-print(array_jumps(array))
+    return clone_array
+
+
+print(array_jumps(array)) 

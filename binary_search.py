@@ -1,5 +1,5 @@
 array = [0,1,21,33,45,45,61,71,72,73]
-target_num = 33
+target_num = 45
 
 def binary_search(array, target_sum):
     left = 0 
