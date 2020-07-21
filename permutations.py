@@ -22,6 +22,20 @@ def find_permutations_long_way(array):
     return array_of_perms
 
 def find_permutations(array):
+    permutations = []
+    permutationsHepler(array, [], permutations)
+    return permutations
+
+
+
+def permutationsHepler(array, currentPermutation, permutations):
+    if not len(array) and len(currentPermutation):
+        permutations.append(currentPermutation)
+    else:
+        for i in range(len(array)):
+            new_array = array[:i] + array[i+1:]
+            new_permutation = currentPermutation + [array[i]]
+            permutationsHepler(new_array, new_permutation, permutations)
 
 
 
