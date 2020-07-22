@@ -11,7 +11,7 @@ def two_nums_n_squared(array,target_sum):
     
     return []
 
-
+#o(n) time
 def two_nums(array,target_sum):
     array.sort()
     left = 0
