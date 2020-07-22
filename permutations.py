@@ -26,14 +26,13 @@ def find_permutations(array):
     permutationsHepler(array, [], permutations)
     return permutations
 
-
-
 def permutationsHepler(array, currentPermutation, permutations):
     if not len(array) and len(currentPermutation):
         permutations.append(currentPermutation)
     else:
         for i in range(len(array)):
             new_array = array[:i] + array[i+1:]
+            print(new_array)
             new_permutation = currentPermutation + [array[i]]
             permutationsHepler(new_array, new_permutation, permutations)
 
