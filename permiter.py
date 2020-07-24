@@ -14,16 +14,21 @@ def islandPerimeter(grid):
             inner_array = grid[row]
             col = 0
             while col < len(inner_array):
-                print(row, col)
                 if grid[row][col] == 1:
-                    if grid[row][col -1] == 0:
-                        perimeter += 1
-                    if grid[row][col + 1] == 0:
-                        perimeter += 1
-                    if grid[row + 1][col + 1] == 0:
-                        perimeter += 1
-                    if grid[row - 1][col + 1] == 0:
-                        perimeter += 1
+                   perimeter += 4
+                   
+                   if grid[row+1][col] == 1:
+                       perimeter -= 1
+
+                   if grid[row][col -1] == 1:
+                       perimeter -= 1
+
+                   if grid[row -1][col] == 1:
+                       perimeter -= 1
+
+                   if grid[row][col +1] == 1:
+                        perimeter -= 1
+               
                 col += 1
             row += 1
 
