@@ -5,7 +5,7 @@ class BinaryTree:
         self.right = None
 
 
-def branchSums(root):
+def branch_sums(root):
     sums = []
     calculate_branch_sums(root, 0, sums)
     return sums
