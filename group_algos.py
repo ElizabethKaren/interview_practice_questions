@@ -1,8 +1,5 @@
 words = ['yo', 'act', 'flop', 'tac', 'foo', 'cat', 'oy', 'olfp']
 
-word = 'atc'
-
-
 def group_algorithms(words):
     if len(words) == 0:
         return []
@@ -30,15 +27,11 @@ def find_matching_word(word, words):
                 if words_match:
                     return [searching_word, word]
 
-        
-
 def create_dictionary(word):
     d = []
     for letter in word:
         d.append(letter)
     d.sort()
     return d
-
-
 
 print(group_algorithms(words))
