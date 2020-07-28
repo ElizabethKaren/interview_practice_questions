@@ -6,13 +6,13 @@
 array = [3,5,-9,1,3-2,3,4,7,2,-9,6,3,1,-5,4]
 
 def kadanes_algorithm(array):
-    total = 0
-    new_total = 0
-    for num in array:
-        new_total = total + num
-        if new_total > total:
-            total = new_total
-    return total
+    max_ending_here = array[0]
+    max_so_far = array[0]
+    for i in range(1, len(array)):
+        num = array[i]
+        max_ending_here = max(num, max_ending_here + num)
+        max_so_far = max(max_so_far, max_ending_here)
+    return max_so_far
 
 
 
