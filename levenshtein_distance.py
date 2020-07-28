@@ -13,9 +13,11 @@ def levenshtein_distance(str1,str2):
     if len(str1) == len(str2):
         return possible_substitution_of_char(str1, str2, sum)
     elif len(str1) > len(str2):
-        return deletion_or_substitution_of_char(str1,str2, sum)
+        difference = len(str1) - len(str2)
+        return deletion_or_substitution_of_char(str1,str2, difference)
     elif len(str2) > len(str1):
-        return deletion_or_substitution_of_char(str2,str1, sum)
+        difference = len(str2) - len(str1)
+        return deletion_or_substitution_of_char(str2,str1, difference)
 
 
 def possible_substitution_of_char(str1,str2, sum):
@@ -27,10 +29,11 @@ def possible_substitution_of_char(str1,str2, sum):
     return sum
 
 def deletion_or_substitution_of_char(big,little, sum):
-    for letter in big:
-        for letter2 in little:
-            if letter != letter2:
-                sum += 1 
+    if len(little) == 0:
+        return len(big)
+    for num in range(len(little)):
+        if little[num] != big[num] and little[num] != big[num+1]:
+            sum += 1 
     return sum
 
 
