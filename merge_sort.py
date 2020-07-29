@@ -27,8 +27,24 @@ def merge_sort(array, left=0, right=len(array)-1):
 
 def merge(arr, start, mid, end):
     start2 = mid + 1
-    if (arr[mid] <= arr[start2]): 
-        return
+    # temp = start
+    # if arr[mid] <= arr[start2]: 
+    #     return
+    # new_arr = []
+    # while start <= mid and start2 <= end:
+    #     if arr[start] <= arr[start2]:
+    #         new_arr.append(arr[start])
+    #         start += 1
+    #     else:
+    #         new_arr.append(arr[start2])
+    #         start2 += 1
+    # if start < mid:
+    #     new_arr += arr[start:mid+1]
+    # if start2 < end:
+    #     new_arr += arr[mid+1:end+1]
+    # for index in range(len(new_arr)):
+    #     value = new_arr[index]
+    #     arr[temp + index] = new_arr[value]
     while start <= mid and start2 <= end:
         if arr[start] <= arr[start2]: 
             start += 1
