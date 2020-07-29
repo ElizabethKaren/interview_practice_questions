@@ -12,6 +12,17 @@ def find_largest_peak(array):
 
     return len(largest_peak)
 
+def recursive_funtion(array, counter=1, largest_peak=[]):
+    if counter == len(array)-1:
+        return len(largest_peak)
+    if array[counter-1] < array[counter] and array[counter+1] < array[counter]:
+            new_peak = find_peak(counter-1, counter, counter+1, array)
+            if len(new_peak) > len(largest_peak):
+                largest_peak = new_peak
+    return recursive_funtion(array, counter +1, largest_peak)
+
+    
+
 def find_peak(begining, peak, end, array):
     new_end = end+1
     new_beginning = begining-1
@@ -22,7 +33,7 @@ def find_peak(begining, peak, end, array):
     if new_end == end and new_beginning == begining:
         return array[begining:end+1]
     return find_peak(new_beginning, peak, new_end, array)
-    
+
     #first time will call find_peak on 2,3,4, array
     #second time call find_peak on 1,3,4, array
     #third time call find_peak on 0,3,4, array
@@ -44,4 +55,4 @@ def find_peak(begining, peak, end, array):
     # else:
     #     return array[begining:end+1]
 
-print(find_largest_peak(array))
+print(recursive_funtion(array))
