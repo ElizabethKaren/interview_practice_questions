@@ -18,7 +18,7 @@ def find_smallest_sub_array(array, S):
         if new_arr:
             closest_sub_array.append(new_arr)
 
-    return smallest_sub_array(closest_sub_array)
+    return len(smallest_sub_array(closest_sub_array))
 
 
 def find_sub_array(array, num , S):
