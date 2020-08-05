@@ -6,10 +6,13 @@ array = [1,2,3,4]
 # Output: [24,12,8,6]
 
 def product_except_self(array):
-    total = sum(array)
+    total = 1
+    for num in array:
+        total = total * num
+
     for index in range(len(array)):
-        new_num = total - array[index]
-        array[index] = new_num
+        new_num = total/array[index]
+        array[index] = int(new_num)
 
     return array
 
