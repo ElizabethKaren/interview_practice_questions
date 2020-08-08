@@ -1,7 +1,7 @@
-year = 1905
+# year = 1905
 # the output should be
 # centuryFromYear(year) = 20;
-#year = 1700
+year = 1700
 #the output should be
 # centuryFromYear(year) = 17.
 # year = 200
@@ -10,12 +10,16 @@ year = 1905
 
 def centuryFromYear(year):
     time = str(year)
-    end_of_time = time[1:]
+    if len(time) == 4:
+        end_of_time = time[2:]
+    else:
+        end_of_time = time[1:]
+
     for num in end_of_time:
-        if num != 0:
+        if int(num) != 0:
            return how_many_digets(str(year), 1)
 
-    return how_many_digets(year)
+    return how_many_digets(str(year))
     
     
 
