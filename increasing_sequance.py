@@ -2,11 +2,22 @@ sequence = [1, 3, 2, 1] #false
 
 
 def almostIncreasingSequence(sequence):
-    c = 0
-    for i in range(len(sequence)-1):
-        if sequence[i] >= sequence[i+1]: c += 1
-        if i+2 < len(sequence) and sequence[i] >= sequence[i+2]: c += 1
-    return c < 3
+    droppped = False
+    last = prev = min(sequence) - 1
+    for elm in sequence:
+        if elm <= last:
+            if droppped:
+                return False
+            else:
+                droppped = True
+            if elm <= prev:
+                prev = last
+            elif elm >= prev:
+                prev = last = elm
+        else:
+            prev, last = last, elm
+    return True
+
 
 
 
