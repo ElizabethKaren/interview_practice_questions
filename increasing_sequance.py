@@ -1,6 +1,7 @@
 sequence = [1, 3, 2, 1] #false
 
 
+#go over this again
 def almostIncreasingSequence(sequence):
     droppped = False
     last = prev = min(sequence) - 1
