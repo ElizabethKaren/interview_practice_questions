@@ -1,6 +1,18 @@
-array = [1,2,3,4,5,6,7,8,9]
+# year = 1905
+# the output should be
+# centuryFromYear(year) = 20;
+year = 1700
+#the output should be
+# centuryFromYear(year) = 17.
 
-def new_problem(array):
-    return array
 
-print(new_problem(array))
+def centuryFromYear(year):
+    time = str(year)
+    print(time[3])
+    if int(time[2]) == 0 and int(time[3]) == 0:
+        return time[0] + time[1]
+    else:
+        return int(time[0] + time[1]) + 1
+
+
+print(centuryFromYear(year))
