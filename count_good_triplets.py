@@ -18,12 +18,21 @@ c = 3
 #triplets: [(3,0,1), (3,0,1), (3,1,1), (0,1,1)].
 
 def count_good_triplets(arr,a,b,c):
-    count = 0
-    for i in range(len(arr)):
-        for j in range(i, len(arr)):
-            for k in range(j, len(arr)):
-                if arr[i] - arr[j] <= a and arr[j] - arr[k] <= b and arr[i] - arr[k] <= c:
-                    count += 1
-    return count 
+    goodTrips = 0
+    length = len(arr)
+    
+    for i in range(0, length - 2):
+        
+        for j in range(i + 1, length - 1):
+            
+            if(abs(arr[i] - arr[j]) <= a):
+            
+                for k in range(j + 1, length):
+                
+                    if((abs(arr[j] - arr[k]) <= b) and (abs(arr[i] - arr[k]) <= c)):
+                    
+                        goodTrips += 1
+                    
+    return goodTrips
 
 print(count_good_triplets(arr, a,b,c))
