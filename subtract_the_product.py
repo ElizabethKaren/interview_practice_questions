@@ -12,8 +12,7 @@ n = 234
 def subtract_product_sum(num):
     sum = find_sum(num)
     product_sum = find_product(num)
-    print(product_sum)
-    return abs(sum - product_sum)
+    return product_sum - sum
 
 
 def find_sum(num):
