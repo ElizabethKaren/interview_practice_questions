@@ -19,16 +19,17 @@ points = [[1,1],[3,4],[-1,0]]
 # Output: 5
 
 def min_time_to_visit_all_points(points):
-    seconds = 0
+    jumps = 0
     for index in range(len(points)-1):
-        next_to = abs(points[index+1][0]) - abs(points[index][1])
-        diagnal = abs(points[index][0]) - abs(points[index+1][1])
-        if next_to < diagnal:
-            seconds += abs(next_to + 1 )
+        next_to = points[index + 1][0] - points[index][0]
+        accross = points[index + 1][1] - points[index][1]
+        if next_to == accross:
+            move = next_to
         else:
-            seconds += abs(diagnal + 2) 
+            move = next_to + accross
+        jumps += abs(move)
 
-    return seconds
+    return jumps
         
 
 
