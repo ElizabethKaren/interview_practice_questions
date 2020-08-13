@@ -23,10 +23,10 @@ def min_time_to_visit_all_points(points):
     for index in range(len(points)-1):
         next_to = points[index + 1][0] - points[index][0]
         accross = points[index + 1][1] - points[index][1]
-        if next_to == accross:
+        if abs(next_to) > abs(accross):
             move = next_to
         else:
-            move = next_to + accross
+            move = accross
         jumps += abs(move)
 
     return jumps
