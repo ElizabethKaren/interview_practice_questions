@@ -12,8 +12,8 @@ nums = [3,4,5,2]
 
 def max_product_of_two(nums):
     largest_num = 0
-    for i in nums:
-        for j in nums:
+    for i in range(len(nums)):
+        for j in range(len(nums)):
             new_sum = (nums[i]-1)*(nums[j]-1)
             if new_sum > largest_num and i != j:
                 largest_num = new_sum
