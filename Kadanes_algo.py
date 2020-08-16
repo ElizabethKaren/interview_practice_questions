@@ -14,8 +14,12 @@ def kadanes_algo(array):
     max_so_far = array[0]
     for i in range(1,len(array)):
         num = array[i]
-        max_ending_here = max(num, max_ending_here + num)
-        max_so_far = max(max_so_far, max_ending_here)
+        if num > num + max_ending_here:
+            max_ending_here = num 
+        else:
+            max_ending_here += num
+        if max_so_far < max_ending_here:
+            max_so_far = max_ending_here
     return max_so_far
 
 
