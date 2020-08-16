@@ -15,6 +15,7 @@ def group_anagrams(words):
             if i != y:
                 word2 = sorted(y)
                 if word == word2:
+                    words.remove(y)
                     sub_array.append(y)
         return_array.append(sub_array)
         
