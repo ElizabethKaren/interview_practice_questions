@@ -8,17 +8,15 @@ words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
 
 def group_anagrams(words):
     return_array = []
-    right = 0
-    left = len(words)-1
-    while left > right:
-        sub_array = [words[right]]
-        if words[left][0] in words[right][0]:
-            sub_array.append(words[left])
-            left =- 1
-        else:
-            return_array.append(sub_array)
-            right += 1 
-            left = len(words)-1
+    for i in words:
+        word = sorted(i)
+        sub_array = [i]
+        for y in words:
+            if i != y:
+                word2 = sorted(y)
+                if word == word2:
+                    sub_array.append(y)
+        return_array.append(sub_array)
         
     return return_array
 
