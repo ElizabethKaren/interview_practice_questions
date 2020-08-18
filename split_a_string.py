@@ -9,16 +9,28 @@ s = 'RLRRLLRLRL'
 #each substring contains same number of 'L' and 'R'.
 
 def balanced(string):
-    count = 0
-    for index in range(len(string)-1):
-        i = string[index]
-        y = string[index + 1]
-        if i != y:
-            pass 
-        else:
-            count += 1
-    
-    return count 
+    num_of_strings = 0
+    last_string = string[0]
+    count = 1
+    while count < len(string):
+        last_string += string[count]
+        print(last_string)
+        if equal_amount(last_string):
+            num_of_strings += 1
+        count += 1
+            
+    return num_of_strings 
+
+def equal_amount(string):
+    r = 0
+    l = 0
+    for i in string:
+        if i == 'R':
+            r += 1
+        elif i == 'L':
+            l += 1
+
+    return r == l
 
 
 print(balanced(s))
