@@ -15,9 +15,11 @@ index = [0,1,2,2,1]
 def create_target(nums,index):
     return_arr = []
     for i in range(len(nums)):
-        if i > len(return_arr):
-            print(index[i])
-            return_arr[index[i]] = nums[i]
+        new_index = index[i]
+        if new_index < len(return_arr)-1:
+            print(new_index)
+            return_arr[new_index] = nums[i]
+            print(return_arr)
         else:
             return_arr.append(nums[i])
     
