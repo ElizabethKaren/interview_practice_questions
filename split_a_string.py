@@ -11,13 +11,10 @@ s = 'RLRRLLRLRL'
 def balanced(string):
     num_of_strings = 0
     last_string = string[0]
-    count = 1
-    while count < len(string):
+    for count in range(1, len(string)):
         last_string += string[count]
-        print(last_string)
         if equal_amount(last_string):
             num_of_strings += 1
-        count += 1
             
     return num_of_strings 
 
