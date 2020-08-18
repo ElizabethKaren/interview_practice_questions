@@ -17,7 +17,7 @@ def create_target(nums,index):
     for i in range(len(nums)):
         print(return_arr)
         new_index = index[i]
-        if new_index < len(return_arr)-1:
+        if new_index < len(return_arr):
             new_end_array = return_arr[new_index:]
             new_num = nums[i]
             return_arr[new_index] = new_num
