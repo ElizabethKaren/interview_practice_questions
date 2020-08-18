@@ -14,14 +14,7 @@ index = [0,1,2,2,1]
 
 def create_target(nums,index)
     return_arr = []
-    nums.each do |i|
-        new_index = index[i]
-        if new_index < return_arr.size
-            return_arr[new_index] = nums[i]
-        else
-            return_arr << nums[i]
-        end
-    end 
+    nums.each { |i|return_arr.insert(index[i], nums[i]) } 
     p return_arr
 end 
 
