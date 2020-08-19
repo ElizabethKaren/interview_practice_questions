@@ -32,8 +32,13 @@ def robbing_houses(nums):
         evens_count += 2
     
     if odds_total == evens_total:
-        largest_num = max(nums)
-        
+        money = 0
+        count = 0
+        while count < len(nums):
+            add = max(nums[count], nums[count-1], nums[count-2])
+            money += add
+            count += 2
+        return money
             
     if odds_total > evens_total:
         return odds_total
