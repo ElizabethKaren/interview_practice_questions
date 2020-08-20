@@ -17,11 +17,11 @@ def product(nums):
     return return_arr
 
 def helper_method(num, nums):
-    product = 0
+    product = 1
     for i in nums:
         if i != num:
             product = product * i
-            
+
     return product 
 
 
