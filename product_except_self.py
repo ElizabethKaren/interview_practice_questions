@@ -3,22 +3,26 @@
 #is equal to the product of all the elements of nums except 
 #nums[i].
 
-nums = [1,2,3,4]
+# nums = [1,2,3,4]
 # Output: [24,12,8,6]
+nums = [0,0]
 
 
 def product(nums):
     return_arr = []
-    product = 1
     for num in nums:
-        product = product * num
-    
-    for num in nums:
-        new_num = product/num
-        return_arr.append(int(new_num))
-    
+        new = helper_method(num, nums)
+        return_arr.append(new)
+       
     return return_arr
 
+def helper_method(num, nums):
+    product = 0
+    for i in nums:
+        if i != num:
+            product = product * i
+            
+    return product 
 
 
 print(product(nums))
