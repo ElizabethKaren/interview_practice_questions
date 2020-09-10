@@ -8,7 +8,7 @@
 #the letters dont need to be contigous
 
 words = ['cat', 'dog', 'bird', 'car', 'ax', 'baby']
-string1 = 'tcabnihjs'
+string1 = 'bbabylkkj'
 
 
 def find_word(words, string1):
@@ -20,8 +20,18 @@ def find_word(words, string1):
                     possibles[word] += 1
                 else:
                     possibles[word] = 1
+    
+    all_values = possibles.values()
+    number = max(all_values)
 
-    return possibles 
+    for key in possibles:
+        if possibles[key] == number:
+            return key
+
+    # if number <= len(string1):
+    #     return 'none' 
+    # else:
+    #     return answer
 
 
 print(find_word(words,string1))
