@@ -20,7 +20,7 @@ def find_word(words,string):
         for letter in word:
             if letter in dictionary_new:
                 return_string += letter 
-                dictionary_new[letter] =- 1
+                dictionary_new[letter] -= 1
                 if dictionary_new[letter] == 0:
                     del dictionary_new[letter]
             if return_string in words:
