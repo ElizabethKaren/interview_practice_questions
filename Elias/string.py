@@ -19,9 +19,10 @@ def find_word(words, string):
     
     all_values = possibles.values()
     number = max(all_values)
+    print(number)
 
     for key in possibles:
-        if possibles[key] == number:
+        if possibles[key] == number and len(key) == number:
             return key
     
     return 'None'
