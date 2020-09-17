@@ -55,12 +55,13 @@ def num_of_clicks(counts):
             output[email] += each[0]
         else:
             output[email] = each[0]
-        newAr = email.split('.')
-        for ones in newAr:
-            if ones in output:
-                output[ones] += each[0]
-            else:
-                output[ones] += each[0]
+
+        new = email.split('.')
+        for count in new:
+            new = new[1:]
+            if len(new) != 0:
+                add = new.join('.')
+                print(add)
 
     return output
 
