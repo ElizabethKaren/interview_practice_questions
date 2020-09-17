@@ -52,16 +52,19 @@ def num_of_clicks(counts):
         each = index.split(',')
         email = each[1]
         if email in output:
-            output[email] += each[0]
+            output[email] += int(each[0])
         else:
-            output[email] = each[0]
+            output[email] = int(each[0])
 
         new = email.split('.')
         for count in new:
             new = new[1:]
             if len(new) != 0:
-                add = new.join('.')
-                print(add)
+                add = '.'.join(new)
+                if add in output:
+                    output[add] += int(each[0])
+                else:
+                    output[add] = int(each[0])
 
     return output
 
