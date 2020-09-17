@@ -86,7 +86,7 @@ def num_of_clicks(counts):
                 else:
                     output[add] = num
 
-    return sorted(output)
+    return output
 
 
 print(num_of_clicks(counts))
