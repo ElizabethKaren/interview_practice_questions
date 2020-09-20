@@ -20,7 +20,11 @@ n = 13
 #Output: 5
 
 def largest_group(n):
-    return n 
+    nums = []
+    for i in range(1,n):
+        nums.append(i)
+
+    return nums
 
 
 print(largest_group(n))
