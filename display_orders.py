@@ -36,6 +36,7 @@ def display_table(orders):
                         if count == index:
                             tab[count] = 1
         else:
+            tableNums.append(table)
             thisTable = [table]
             for count in range(len(orders)):
                 if count == index:
