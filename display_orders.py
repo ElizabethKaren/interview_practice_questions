@@ -23,11 +23,27 @@ orders = [["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","F
 # For the table 10: Corina orders "Beef Burrito". 
 
 def display_table(orders):
-    food = []
+    tableNums = []
+    tablesToRemember = []
+    food = ["Table"]
     for index in range(len(orders)):
         item = orders[index][2]
+        table = orders[index][1]
+        if table in tableNums:
+            pass 
+        else:
+            thisTable = [table]
+            for count in range(len(orders)):
+                if count == index:
+                    thisTable.append(1)
+                else:
+                    thisTable.append(0)
+
+            tablesToRemember.append(thisTable)
+                
+
         food.append(item)
 
-    return food 
+    return food + tablesToRemember
 
 print(display_table(orders))
