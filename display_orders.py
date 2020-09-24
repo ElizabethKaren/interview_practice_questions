@@ -30,7 +30,11 @@ def display_table(orders):
         item = orders[index][2]
         table = orders[index][1]
         if table in tableNums:
-            pass
+            for tab in tablesToRemember:
+                if tab[0] == table:
+                    for count in range(len(tab)):
+                        if count == index:
+                            tab[count] = 1
         else:
             thisTable = [table]
             for count in range(len(orders)):
