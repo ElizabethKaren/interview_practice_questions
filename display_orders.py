@@ -21,3 +21,13 @@ orders = [["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","F
 # For the table 3: David orders "Ceviche" and "Fried Chicken", and Rous orders "Ceviche".
 # For the table 5: Carla orders "Water" and "Ceviche".
 # For the table 10: Corina orders "Beef Burrito". 
+
+def display_table(orders):
+    food = []
+    for index in range(len(orders)):
+        item = orders[index][2]
+        food.append(item)
+
+    return food 
+
+print(display_table(orders))
