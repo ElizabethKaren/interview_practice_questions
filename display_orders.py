@@ -30,7 +30,7 @@ def display_table(orders):
         item = orders[index][2]
         table = orders[index][1]
         if table in tableNums:
-            pass 
+            pass
         else:
             thisTable = [table]
             for count in range(len(orders)):
@@ -44,6 +44,6 @@ def display_table(orders):
 
         food.append(item)
 
-    return food + tablesToRemember
+    return [food] + tablesToRemember
 
 print(display_table(orders))
