@@ -13,13 +13,17 @@
 # history at most steps.
 
 Input = ["BrowserHistory","visit","visit","visit","back","back","forward","visit","forward","back","back"]
-[["leetcode.com"],["google.com"],["facebook.com"],["youtube.com"],[1],[1],[1],["linkedin.com"],[2],[2],[7]]
+websites = [["leetcode.com"],["google.com"],["facebook.com"],["youtube.com"],[1],[1],[1],["linkedin.com"],[2],[2],[7]]
 # Output:
 # [null,null,null,null,"facebook.com","google.com","facebook.com",null,"linkedin.com","google.com","leetcode.com"]
 
-def history(input):
-    return input[1]
+def history(input,websites):
+    array = []
+    for index in websites:
+        if str(index):
+            array.append(index)
+    return array
 
 
 
-print(history(Input))
+print(history(Input, websites))
