@@ -20,8 +20,10 @@ websites = [["leetcode.com"],["google.com"],["facebook.com"],["youtube.com"],[1]
 def history(input,websites):
     array = []
     for index in websites:
-        if str(index):
-            array.append(index)
+        if '.com' in index[0]:
+            print(index)
+            website = index[0]
+            array.index(website)
     return array
 
 
