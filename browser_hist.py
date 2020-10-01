@@ -18,7 +18,7 @@ Input = ["BrowserHistory","visit","visit","visit","back","back","forward","visit
 # [null,null,null,null,"facebook.com","google.com","facebook.com",null,"linkedin.com","google.com","leetcode.com"]
 
 def history(input):
-    return input
+    return input[1]
 
 
 
