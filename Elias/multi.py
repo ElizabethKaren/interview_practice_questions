@@ -14,10 +14,8 @@ def multiply_arrays(array1, array2):
             new_index = i + j + 1
             output_array[new_index] += new_number
             output_array[new_index - 1] = new_number // 10
-            while new_number > 10:
-                output_array[new_index] = new_number % 10
-                new_number = new_number % 10
-                new_index -= 1
+            output_array[new_index] = output_array[new_number] % 10
+
 
     return output_array
 
