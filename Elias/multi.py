@@ -1,13 +1,25 @@
-array1 = [1,2]
-array2 = [1,2]
+array1 = [7]
+array2 = [7]
+
 def multiply_arrays(array1, array2):
-    new_number = array1[0] * array2[0]
+    
     output_len = len(array1) + len(array2)
     output_array = [0 for i in range(output_len)]
-    print(output_array)
+
+    #output array, 2 input arrays
+    # a double for loop, that iterates through both input arrays
     for i in reversed(range(len(array1))):
         for j in reversed(range(len(array2))):
-            print(array1[i], array2[j])
+            new_number = array1[i] * array2[j]
+            new_index = i + j + 1
+            output_array[new_index] = new_number
+            output_array[new_index - 1] = new_number // 10
+            output_array[new_index] = new_number % 10
+
+
+    return output_array
+
+
 print(multiply_arrays(array1, array2))
     #  [7]
     #x [7]
