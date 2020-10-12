@@ -1,6 +1,9 @@
+
+
+
 array = [8,5,2,9,5,6,3]
 
-function bubbleSort(array){
+bubbleSort = array => {
     let isSorted = false;
     let counter = 0;
     while (!isSorted) {
