@@ -16,8 +16,7 @@ function bubbleSort(array){
     return array;
 }
 
-
-function swap(i,j,array){
+swap = (i,j,array) => {
     const temp = array[j];
     array[j] = array[i];
     array[i] = temp;
