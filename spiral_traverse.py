@@ -1,3 +1,4 @@
+
 array = [
     [1, 2, 3, 4],
     [12,13,14, 5],
@@ -7,18 +8,17 @@ array = [
 
 def spiral_traverse(array):
     new_array = []
-    begining = True
-    down = False
-    for i in range(len(array)):
-        for j in range(len(array[i])):
-            if begining:
-                new_array.append(array[i][j])
-            else:
-                new_array.append(array[i][j])
-        if begining:
-            begining = False 
+    outter_index = 0
+    while outter_index < len(array):
+        inner_array = array[outter_index]
+        if outter_index % 2 == 0:
+            for i in inner_array:
+                new_array.append(i)
         else:
-            begining = True
+            for i in reversed(inner_array):
+                new_array.append(i)
+        outter_index += 1 
+
     return new_array
 
 
