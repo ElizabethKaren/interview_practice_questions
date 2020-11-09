@@ -7,3 +7,26 @@
 # share of the stock on any given day, and you cant buy more than one share of the stock on any given 
 # day, and you cant buy a share of the stock if you're still holding another share. Also, you don't 
 # need to use all K transactions that you're allowed.
+
+prices = [5, 11, 3, 50, 60, 90]
+k = 2 
+
+
+def maxProfitWithTransactions(prices, k):
+    if not len(prices):
+        return 0
+    profits = [[0 for d in prices] for t in range(k + 1)]
+    for t in range(1, k+1):
+        maxThusFar = float("-inf")
+        for d in range(1, len(prices)):
+            maxThusFar = max(maxThusFar, profits[t-1][d-1]- prices[d-1])
+            profits[t][d] = max(profits[t][d-1], maxThusFar + prices[d])
+        return profits[-1][-1]
+
+
+print(maxProfitWithTransactions(prices,k))
+
+
+
+
+
