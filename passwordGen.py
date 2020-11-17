@@ -10,7 +10,7 @@ def passwordGenerator():
     length = random.randint(8,12)
     while count < length:
         randomChar = random.randint(0,len(characters)-1)
-        string = string + characters[randomChar]
+        string += characters[randomChar]
         count += 1 
     return string 
 
