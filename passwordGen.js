@@ -1,4 +1,4 @@
-const passwordGenerator = (passwordNeededLength) => {
+const passwordGenerator = (passwordNeededLength=12) => {
     const characters = ['a','b','c','d','e','f','g','!' ,'@','$','%','k','l', 'm', 'n','o','p','2','4','6','7','8','9', 'Q', 'R', 'S','T','U','V','W','X','Y', 'Z']
     let string = ''
     let length = passwordNeededLength
@@ -11,7 +11,7 @@ const passwordGenerator = (passwordNeededLength) => {
     return string
 }
 
-console.log(passwordGenerator(12))
+console.log(passwordGenerator())
 
 
 
